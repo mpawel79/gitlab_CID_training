@@ -1,7 +1,13 @@
 stages:
   - test
 
-test my job name:
+test ui:
   stage: test
   script:
-    - python onboarding.py
+    - python -m unittest shop_sample_tests.py
+
+
+#test my job name:
+#  stage: test
+#  script:
+#    - python onboarding.py
