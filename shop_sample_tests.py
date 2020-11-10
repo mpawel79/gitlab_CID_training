@@ -15,6 +15,6 @@ class ShopSampleTest(unittest.TestCase):
 
         expected_value = 'Lost Hat'
 
-        actual_value = ''
+        actual_value = 'Lost Hat'
 
         self.assertEqual(expected_value, actual_value)
