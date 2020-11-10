@@ -4,7 +4,7 @@ stages:
 test ui:
   stage: test
   script:
-    - python -m unittest shop_sample_tests.py
+    - python -m unittest shop_sample_tests
 
 
 #test my job name:
