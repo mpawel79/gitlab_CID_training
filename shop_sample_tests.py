@@ -6,7 +6,7 @@ class ShopSampleTest(unittest.TestCase):
     def setUp(self):
         print("setUp")
 
-        self.mock_acutal_title = 'Lost hat'
+        self.mock_actual_value = 'Lost Hat'
 
 
 
@@ -17,6 +17,6 @@ class ShopSampleTest(unittest.TestCase):
 
         expected_value = 'Lost Hat'
 
-        actual_value = self.mock_acutal_title
+        actual_value = self.mock_actual_value
 
         self.assertEqual(expected_value, actual_value)
