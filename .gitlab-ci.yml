@@ -5,6 +5,7 @@ test ui:
   stage: test
   script:
     - python -m unittest shop_sample_tests
+    - python -m platform
 
 
 #test my job name:
