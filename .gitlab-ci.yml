@@ -1,3 +1,5 @@
+stages:
+ - test
 
 image: jaktestowac/python-chromedriver:3.6-xvfb
 
@@ -8,6 +10,7 @@ before_script:
   - pip install -r requirements.txt
 
 test ui:
+  stage: test
   script:
     - python -m unittest shop_sample_tests
     - python -m platform
