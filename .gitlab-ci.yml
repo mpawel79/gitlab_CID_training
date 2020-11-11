@@ -23,7 +23,12 @@ job_test ui:
     - python -m platform
 
 
-run bye:
+teardown end of tests:
   stage: teardown
   script:
     - python bye.py
+
+teardown test report:
+  stage: teardown
+  script:
+    - python generate_report.py
