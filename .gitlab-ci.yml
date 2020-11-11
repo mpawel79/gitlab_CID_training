@@ -1,6 +1,10 @@
 stages:
   - test
 
+before_script:
+  - pip install -r requirements.txt
+
+
 test ui:
   stage: test
   script:
