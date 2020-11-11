@@ -1,6 +1,7 @@
 stages:
   - setup
   - test
+  - teardown
 
 image: jaktestowac/python-chromedriver:3.6-xvfb
 
@@ -22,3 +23,7 @@ job_test ui:
     - python -m platform
 
 
+run bye:
+  stage: teardown
+  script:
+    - python bye.py
