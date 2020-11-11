@@ -5,6 +5,8 @@ image: jaktestowac/python-chromedriver:3.6-xvfb
 
 before_script:
   - cat /etc/os-release
+  - google-chrome --version
+  - chromedriver --version
   - pip install -r requirements.txt
 
 test ui:
