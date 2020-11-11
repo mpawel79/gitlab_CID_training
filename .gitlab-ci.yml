@@ -1,6 +1,8 @@
 stages:
   - test
 
+image: jaktestowac/python-chromedriver:3.6-xvfb
+
 before_script:
   - pip install -r requirements.txt
 
