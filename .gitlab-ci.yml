@@ -1,5 +1,6 @@
 stages:
- - test
+  - setup
+  - test
 
 image: jaktestowac/python-chromedriver:3.6-xvfb
 
@@ -8,6 +9,11 @@ before_script:
   - google-chrome --version
   - chromedriver --version
   - pip install -r requirements.txt
+
+setup all:
+  stage: setup
+  script:
+    - python hello.py
 
 job_test ui:
   stage: test
