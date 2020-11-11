@@ -4,8 +4,8 @@ stages:
 image: jaktestowac/python-chromedriver:3.6-xvfb
 
 before_script:
+  - cat /etc/os-release
   - pip install -r requirements.txt
-
 
 test ui:
   stage: test
