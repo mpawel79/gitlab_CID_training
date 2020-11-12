@@ -16,13 +16,17 @@ setup all:
   stage: setup
 #  when:  manual
   script:
+    - python -m platform
     - python hello.py
 
 test ui titles:
   stage: test
   script:
     - python -m unittest shop_sample_tests
-    - python -m platform
+  artifacts:
+    when: always
+    paths:
+      - ./testResults/
 
 # Manual job - NON-BLOCKING execution
 test ui gdpr:
