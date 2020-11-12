@@ -35,4 +35,6 @@ class ShopSampleTest(unittest.TestCase):
         expected_value = 'Lost Hat'
         actual_value = self.driver.title
 
+        self.driver.get_screenshot_as_file("testResults/screenshot.png")
+
         self.assertEqual(expected_value, actual_value)
