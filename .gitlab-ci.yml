@@ -16,12 +16,16 @@ setup all:
   script:
     - python hello.py
 
-job_test ui:
+test ui titles:
   stage: test
   script:
     - python -m unittest shop_sample_tests
     - python -m platform
 
+test ui gdpr:
+  stage: test
+  script:
+    - python -m unittest shop_gdpr_tests
 
 teardown end of tests:
   stage: teardown
