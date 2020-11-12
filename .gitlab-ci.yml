@@ -1,8 +1,8 @@
 stages:
   - setup
   - test
-  - deploy
   - teardown
+  - deploy
 
 image: jaktestowac/python-chromedriver:3.6-xvfb
 
@@ -35,14 +35,13 @@ teardown end of tests:
   script:
     - python bye.py
 
+teardown test report:
+  stage: teardown
+  script:
+    - python generate_report.py
+
 deploy to production:
   stage: deploy
   when: manual
   script:
     - python deploy.py
-
-
-teardown test report:
-  stage: teardown
-  script:
-    - python generate_report.py
