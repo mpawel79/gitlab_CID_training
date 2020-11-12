@@ -5,7 +5,12 @@ stages:
   - deploy
 
 
+image: ruby:2.5
 
+
+before_script:
+  - cat /etc/os-release
+  - echo 'Global before_script'
 
 setup all:
   stage: setup
@@ -18,6 +23,7 @@ test ui titles:
   stage: test
   image: jaktestowac/python-chromedriver:3.6-xvfb
   before_script:
+  - echo 'Job before_script'
   - cat /etc/os-release
   - google-chrome --version
   - chromedriver --version
@@ -34,6 +40,7 @@ test ui gdpr:
   stage: test
   image: jaktestowac/python-chromedriver:3.6-xvfb
   before_script:
+  - echo 'Job before_script'
   - cat /etc/os-release
   - google-chrome --version
   - chromedriver --version
