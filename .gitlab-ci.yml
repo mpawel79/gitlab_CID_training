@@ -37,8 +37,8 @@ test ui gdpr:
   - cat /etc/os-release
   - google-chrome --version
   - chromedriver --version
-
-  #  when: manual
+  - pip install -r requirements.txt
+#  when: manual
 #  allow_failure: false
   script:
     - python -m unittest shop_gdpr_tests
