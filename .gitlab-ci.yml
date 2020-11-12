@@ -27,6 +27,7 @@ test ui titles:
 test ui gdpr:
   stage: test
   when: manual
+  allow_failure: false
   script:
     - python -m unittest shop_gdpr_tests
 
