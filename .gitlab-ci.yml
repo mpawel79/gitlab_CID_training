@@ -24,12 +24,21 @@ test ui titles:
     - python -m unittest shop_sample_tests
     - python -m platform
 
+# Manual job - NON-BLOCKING execution
 test ui gdpr:
   stage: test
   when: manual
-  allow_failure: false
   script:
     - python -m unittest shop_gdpr_tests
+
+# Job blocking pipeline execution: when: manual, allow_failure: false
+#test ui gdpr:
+#  stage: test
+#  when: manual
+#  allow_failure: false
+#  script:
+#    - python -m unittest shop_gdpr_tests
+
 
 teardown end of tests:
   stage: teardown
