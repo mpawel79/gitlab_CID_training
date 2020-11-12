@@ -19,15 +19,18 @@ setup all:
     - python -m platform
     - python hello.py
 
-test ui titles:
+.testTemplate:
   stage: test
   image: jaktestowac/python-chromedriver:3.6-xvfb
   before_script:
-  - echo 'Job before_script'
-  - cat /etc/os-release
-  - google-chrome --version
-  - chromedriver --version
-  - pip install -r requirements.txt
+    - echo 'Job before_script (template now)'
+    - cat /etc/os-release
+    - google-chrome --version
+    - chromedriver --version
+    - pip install -r requirements.txt
+
+test ui titles:
+  extends: .testTemplate
   script:
     - python -m unittest shop_sample_tests
   artifacts:
@@ -37,16 +40,7 @@ test ui titles:
 
 # Manual job - NON-BLOCKING execution
 test ui gdpr:
-  stage: test
-  image: jaktestowac/python-chromedriver:3.6-xvfb
-  before_script:
-  - echo 'Job before_script'
-  - cat /etc/os-release
-  - google-chrome --version
-  - chromedriver --version
-  - pip install -r requirements.txt
-#  when: manual
-#  allow_failure: false
+  extends: .testTemplate
   script:
     - python -m unittest shop_gdpr_tests
 
