@@ -20,7 +20,6 @@ setup all:
     - python hello.py
 
 .testTemplate:
-  stage: test
   image: jaktestowac/python-chromedriver:3.6-xvfb
   before_script:
     - echo 'Job before_script (template now)'
@@ -30,6 +29,7 @@ setup all:
     - pip install -r requirements.txt
 
 test ui titles:
+  stage: test
   extends: .testTemplate
   script:
     - python -m unittest shop_sample_tests
@@ -40,6 +40,7 @@ test ui titles:
 
 # Manual job - NON-BLOCKING execution
 test ui gdpr:
+  stage: test
   extends: .testTemplate
   script:
     - python -m unittest shop_gdpr_tests
