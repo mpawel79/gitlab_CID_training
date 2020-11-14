@@ -45,6 +45,9 @@ test ui gdpr:
   script:
     - python -m unittest shop_gdpr_tests
 
+  only:
+    - master
+
 teardown end of tests:
   stage: teardown
   script:

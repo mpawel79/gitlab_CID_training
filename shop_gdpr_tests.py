@@ -44,4 +44,7 @@ class ShopSampleTest(unittest.TestCase):
         self.driver.get(contact_us_page)
         self.driver.find_element_by_css_selector('.form-footer > .btn').click()
         error = self.driver.find_element_by_css_selector('.alert.alert-danger > ul > li')
+
+        self.driver.get_screenshot_as_file("testResults/screenshot_invalid_contact.png")
+
         self.assertEqual(expected_title, error.text)
