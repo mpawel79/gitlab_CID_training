@@ -38,6 +38,9 @@ test ui titles:
     paths:
       - ./testResults/
 
+  except:
+    - master
+
 # Manual job - NON-BLOCKING execution
 test ui gdpr:
   stage: test
