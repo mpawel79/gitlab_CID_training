@@ -33,7 +33,7 @@ class ShopSampleTest(unittest.TestCase):
         contact_us_page = 'https://autodemo.testoneo.com/en/contact-us'
         self.driver.get(contact_us_page)
 
-        expected_value = 'Contact us'
+        expected_value = 'Contact us INVALID'
         actual_value = self.driver.title
 
         self.assertEqual(expected_value, actual_value)

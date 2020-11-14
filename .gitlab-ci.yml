@@ -51,6 +51,10 @@ test ui gdpr:
   only:
     - master
 
+  retry:
+    max: 2
+    when: script_failure
+
 teardown end of tests:
   stage: teardown
   script:
